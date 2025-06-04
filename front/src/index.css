@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+
+  --color-mono-0: #fff;
+  --color-mono-4: #f5f2f0;
+  --color-mono-8: #eae7e4;
+  --color-mono-16: #d6d3d1;
+  --color-mono-25: #bfbfbf;
+  --color-mono-50: #807e7c;
+  --color-mono-75: #403f3e;
+  --color-mono-84: #292828;
+  --color-mono-92: #141414;
+  --color-mono-100: #000;
+
+  --color-vermel-50: #ffe3d8;
+  --color-vermel-100: #ffc0ad;
+  --color-vermel-200: #ffa38a;
+  --color-vermel-300: #ff8263;
+  --color-vermel-400: #ff613d;
+  --color-vermel-500: #fe3a10;
+  --color-vermel-600: #fe2c02;
+  --color-vermel-700: #f12a0a;
+  --color-vermel-800: #da271f;
+  --color-vermel-900: #bd2237;
+
+  --color-magenta-50: #fae6e2;
+  --color-magenta-100: #efc7d2;
+  --color-magenta-200: #e6aac1;
+  --color-magenta-300: #dd8eb0;
+  --color-magenta-400: #d574a0;
+  --color-magenta-500: #ce5b90;
+  --color-magenta-600: #c14b85;
+  --color-magenta-700: #b6407d;
+  --color-magenta-800: #a4397d;
+  --color-magenta-900: #842c7b;
+
+  --color-avocado-50: #effaea;
+  --color-avocado-100: #d8f2ca;
+  --color-avocado-200: #bee9a8;
+  --color-avocado-300: #a3df84;
+  --color-avocado-400: #8dd867;
+  --color-avocado-500: #78d04b;
+  --color-avocado-600: #68c043;
+  --color-avocado-700: #53ab39;
+  --color-avocado-800: #3f972f;
+  --color-avocado-900: #12741e;
+
+  --color-emerald-50: #e4f6eb;
+  --color-emerald-100: #c3f0d3;
+  --color-emerald-200: #97e0b2;
+  --color-emerald-300: #62cf8d;
+  --color-emerald-400: #2fbf72;
+  --color-emerald-500: #00b359;
+  --color-emerald-600: #00a44f;
+  --color-emerald-700: #009243;
+  --color-emerald-800: #008137;
+  --color-emerald-900: #006123;
+
+  --text-default: 0.875rem;
+  --text-default--line-height: 1.5rem;
+  --text-default--letter-spacing: 0.01rem;
+
+  --text-default-bold: 0.875rem;
+  --text-default-bold--line-height: 1.5rem;
+  --text-default-bold--letter-spacing: 0.01rem;
+  --text-default-bold--font-weight: 600;
+
+  --text-large: 1rem;
+  --text-large--line-height: 1.5rem;
+  --text-large--letter-spacing: 0.0005rem;
+
+  --text-large-bold: 1rem;
+  --text-large-bold--line-height: 1.5rem;
+  --text-large-bold--letter-spacing: 0.0005rem;
+  --text-large-bold--font-weight: 600;
+
+  --text-body: 1.125rem;
+  --text-body--line-height: 1.5rem;
+  --text-body--letter-spacing: 0.0015rem;
+  --text-body--font-weight: 600;
+
+  --text-subsection: 1.375rem;
+  --text-subsection--line-height: 2rem;
+  --text-subsection--letter-spacing: -0.015rem;
+  --text-subsection--font-weight: 600;
+
+  --text-section: 1.625rem,
+  --text-section--line-height: 2rem;
+  --text-section--letter-spacing: -0.015rem;
+  --text-section--font-weight: 600;
+
+  --text-screen: 2rem;
+  --text-screen--line-height: 2.5rem;
+  --text-screen--letter-spacing: -0.015rem;
+  --text-screen--font-weight: 600;
+
+  --font-base: Inter, sans-serif;
+}
