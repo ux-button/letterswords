@@ -1,4 +1,5 @@
 import { Button } from "./components/Button";
+import { Input } from "./components/Input";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Button type="positive" size="xsize" icon="star">
         Outstanding
       </Button>
+      <Input type="onLight" title="New Word" placeholder="Type word" />
     </div>
   );
 };
