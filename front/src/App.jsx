@@ -1,5 +1,6 @@
 import { Button } from "./components/Button";
 import { Input } from "./components/Input";
+import { WordsGroupCard } from "./components/WordsGroupCard";
 
 const App = () => {
   return (
@@ -18,6 +19,62 @@ const App = () => {
         Outstanding
       </Button>
       <Input type="onLight" title="New Word" placeholder="Type word" />
+      <div className="grid grid-cols-2 gap-0.5">
+        <WordsGroupCard
+          type="default"
+          learningCurve="2"
+          groupName="Architecture"
+          wordsQnt="10"
+        />
+        <WordsGroupCard
+          type="riseLow"
+          learningCurve="2"
+          groupName="Architecture"
+          wordsQnt="10"
+        />
+        <WordsGroupCard
+          type="riseHigh"
+          learningCurve="2"
+          groupName="Travel Insights of London"
+          wordsQnt="10"
+        />
+        <WordsGroupCard
+          type="repeat"
+          learningCurve="2"
+          groupName="Architecture"
+          wordsQnt="10"
+        />
+        <WordsGroupCard
+          type="riseExtreme"
+          learningCurve="2"
+          groupName="Architecture"
+          wordsQnt="10"
+        />
+        <WordsGroupCard
+          type="struggle"
+          learningCurve="2"
+          groupName="Architecture"
+          wordsQnt="10"
+        />
+        <WordsGroupCard
+          type="recommended"
+          learningCurve="2"
+          groupName="Architecture"
+          wordsQnt="10"
+        />
+        <WordsGroupCard
+          type="neural"
+          learningCurve="2"
+          groupName="Architecture"
+          wordsQnt="10"
+        />
+        <WordsGroupCard
+          type="inbox"
+          learningCurve="2"
+          groupName="Architecture"
+          wordsQnt="10"
+        />
+      </div>
     </div>
   );
 };
