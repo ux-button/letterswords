@@ -12,15 +12,18 @@ const Button = ({ children, type, size, icon }) => {
   };
 
   const buttonSize = {
-    small: "font-base text-default-bold flex rounded-full w-fit px-2 py-1",
-    main: "font-base text-large-bold flex rounded-full w-fit px-2 py-2",
-    large: "font-base text-body flex rounded-3xl w-fit px-4 py-4",
-    xsize: "font-base text-body flex rounded-3xl w-fit px-6 py-5",
+    small:
+      "font-base text-default-bold flex justify-center rounded-full w-full px-2 py-1",
+    main: "font-base text-large-bold flex justify-center rounded-full w-full px-2 py-2",
+    large:
+      "font-base text-body flex justify-center w-full rounded-3xl px-4 py-4",
+    xsize:
+      "font-base text-body flex justify-center rounded-3xl w-full px-6 py-5",
   };
 
   return (
     <div className={`${buttonType[type][0]} ${buttonSize[size]}`}>
-      <Icon type={icon} size="24" style={buttonType[type][1]} />
+      {icon && <Icon type={icon} size="24" style={buttonType[type][1]} />}
       <div className="mx-2">{children}</div>
     </div>
   );

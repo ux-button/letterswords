@@ -7,11 +7,14 @@ const Input = ({ type, placeholder, title, text }) => {
   // Styles
   const textType = {
     onLight:
-      "bg-mono-4 caret-avocado-500 border-0  placeholder:text-mono-16 hover:bg-mono-20 focus:bg-mono-8",
+      "bg-mono-4 caret-avocado-500 border-0 placeholder:text-mono-16 hover:bg-mono-20 focus:bg-mono-8",
+    onDark:
+      "bg-mono-84 caret-avocado-500 border-0 placeholder:text-mono-4 hover:bg-mono-75 focus:bg-mono-92 text-mono-4",
   };
 
   const labalType = {
     onLight: "text-default text-mono-50",
+    onDark: "text-default text-mono-50",
   };
 
   // Controllers
