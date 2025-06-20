@@ -1,29 +1,28 @@
-import { useState } from "react";
-import { BasicIcon } from "./BasicIcon";
+import { BasicIcon } from './BasicIcon';
 
-const Input = ({ type, text, setText, placeholder, title }) => {
+const Input = ({ type, label, text, setText, placeholder }) => {
   // Input field style
   const textType = {
     onLight:
-      "bg-mono-4 caret-avocado-500 border-0 placeholder:text-mono-16 hover:bg-mono-20 focus:bg-mono-8",
-    onLightError: "bg-vermel-50 border border-magenta-700 hover:bg-vermel-100",
+      'bg-mono-4 caret-avocado-500 border-0 placeholder:text-mono-16 hover:bg-mono-20 focus:bg-mono-8',
+    onLightError: 'bg-vermel-50 border border-magenta-700 hover:bg-vermel-100',
     onDark:
-      "bg-mono-84 caret-avocado-500 border-0 placeholder:text-mono-4 hover:bg-mono-75 focus:bg-mono-92 text-mono-4",
-    onDarkError: "bg-vermel-200 border border-magenta-800 hover:bg-vermel-300",
+      'bg-mono-84 caret-avocado-500 border-0 placeholder:text-mono-4 hover:bg-mono-75 focus:bg-mono-92 text-mono-4',
+    onDarkError: 'bg-vermel-200 border border-magenta-800 hover:bg-vermel-300',
   };
   // Label style and color
   const labelType = {
-    onLight: "text-default text-mono-50",
-    onLightError: "text-default text-magenta-700",
-    onDark: "text-default text-mono-50",
-    onDarkError: "text-default text-magenta-800",
+    onLight: 'text-default text-mono-50',
+    onLightError: 'text-default text-magenta-700',
+    onDark: 'text-default text-mono-50',
+    onDarkError: 'text-default text-magenta-800',
   };
   // Basic icon style
   const iconColor = {
-    onLight: "fill-none stroke-mono-25",
-    onLightError: "fill-none stroke-magenta-500",
-    onDark: "fill-none stroke-mono-25",
-    onDarkError: "fill-none stroke-magenta-500",
+    onLight: 'fill-none stroke-mono-25',
+    onLightError: 'fill-none stroke-magenta-500',
+    onDark: 'fill-none stroke-mono-25',
+    onDarkError: 'fill-none stroke-magenta-500',
   };
 
   // Controllers
@@ -32,26 +31,24 @@ const Input = ({ type, text, setText, placeholder, title }) => {
   };
 
   const handleClear = () => {
-    setText("");
+    setText('');
   };
 
   return (
-    <div className={`${textType[type]} p-4 w-full rounded-3xl flex`}>
+    <div className={`${textType[type]} flex w-full rounded-3xl p-4`}>
       <div className="w-full">
-        <div className={labelType[type]}>{title}</div>
+        <div className={labelType[type]}>{label}</div>
         <input
-          className="text-subsection outline-none w-full"
+          className="text-subsection w-full outline-none"
           type="text"
-          name={title}
+          name={label}
           value={text}
           onChange={(e) => handleChange(e.target.value)}
           placeholder={placeholder}
         />
       </div>
       <div onClick={handleClear} className="flex flex-col justify-center">
-        {text ? (
-          <BasicIcon type="cross" size="24" style={iconColor[type]} />
-        ) : null}
+        {text ? <BasicIcon type="cross" size="24" style={iconColor[type]} /> : null}
       </div>
     </div>
   );

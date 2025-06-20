@@ -1,7 +1,7 @@
 const LoginBackground = () => {
   return (
     <svg
-      className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[932px] max-w-none z-10 pointer-events-none"
+      className="pointer-events-none absolute inset-1/2 z-10 h-[932px] w-[760px] max-w-none -translate-x-1/2 -translate-y-1/2"
       width="760"
       height="932"
       viewBox="0 0 760 932"
