@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react';
 import { Button } from '../../components/Button';
 import { WordsGroupCard } from '../../components/WordsGroupCard';
 import { groupSort } from './groupSort';
-import { AddGroupBottomSheet } from './AddGroupBottomSheet';
+
+import { AddGroupBottomsheet } from './AddGroupBottomsheet';
+import { AddWordBottomsheet } from './AddWordBottomsheet';
 import { useAddGroup } from './useAddGroup';
+import { useAddWord } from './useAddWord';
 
 const GroupPage = () => {
   const [groups, setGroups] = useState([
@@ -25,6 +28,9 @@ const GroupPage = () => {
   // Add group controller
   const addGroup = useAddGroup();
 
+  // Add single word controller
+  const addWord = useAddWord();
+
   useEffect(() => {
     // Sort groups controller
     const sortedGroups = groupSort(groups);
@@ -42,7 +48,7 @@ const GroupPage = () => {
           <Button type="tertary" size="small" icon="plus" handleClick={addGroup.handleOpen}>
             Add group
           </Button>
-          <Button type="ghost" size="small">
+          <Button type="ghost" size="small" handleClick={addWord.handleOpen}>
             Add word
           </Button>
         </section>
@@ -58,7 +64,7 @@ const GroupPage = () => {
             );
           })}
         </section>
-        <AddGroupBottomSheet
+        <AddGroupBottomsheet
           isOpen={addGroup.isOpen}
           handleClose={addGroup.handleClose}
           groupName={addGroup.name}
@@ -66,6 +72,15 @@ const GroupPage = () => {
           handleAddGroup={addGroup.handleAddGroup}
         />
       </div>
+      <AddWordBottomsheet
+        isOpen={addWord.isOpen}
+        handleClose={addWord.handleClose}
+        word={addWord.word}
+        translation={addWord.translation}
+        setWord={addWord.setWord}
+        setTranslation={addWord.setTranslation}
+        handleAddWord={addWord.handleAddWord}
+      />
     </div>
   );
 };

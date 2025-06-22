@@ -2,7 +2,7 @@ import { BottomSheet } from '../../components/BottomSheet';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 
-const AddGroupBottomSheet = ({ isOpen, handleClose, groupName, setGroupName, handleAddGroup }) => {
+const AddGroupBottomsheet = ({ isOpen, handleClose, groupName, setGroupName, handleAddGroup }) => {
   return (
     <BottomSheet isOpen={isOpen} title="Add group" suffixIcon="cross" handleSuffix={handleClose}>
       <div className="space-y-4">
@@ -10,15 +10,15 @@ const AddGroupBottomSheet = ({ isOpen, handleClose, groupName, setGroupName, han
           text={groupName}
           setText={setGroupName}
           type="onLight"
-          label="Login"
-          placeholder="Email"
+          label="Group name"
+          placeholder="Type name"
         />
         <Button type="primary" size="large" handleClick={handleAddGroup}>
-          Add group
+          Add
         </Button>
       </div>
     </BottomSheet>
   );
 };
 
-export { AddGroupBottomSheet };
+export { AddGroupBottomsheet };
