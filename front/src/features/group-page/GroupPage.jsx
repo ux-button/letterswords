@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react';
+
+// Components
 import { Button } from '../../components/Button';
 import { WordsGroupCard } from '../../components/WordsGroupCard';
-import { groupSort } from './groupSort';
-
 import { AddGroupBottomsheet } from './AddGroupBottomsheet';
 import { AddWordBottomsheet } from './AddWordBottomsheet';
+
+// Controllers
+import { groupSort } from './groupSort';
+
+// Hooks
 import { useAddGroup } from './useAddGroup';
 import { useAddWord } from './useAddWord';
 
@@ -45,10 +50,10 @@ const GroupPage = () => {
           <div className="bg-mono-25 h-12 w-12 rounded-full"></div>
         </section>
         <section className="flex space-x-2 px-4">
-          <Button type="tertary" size="small" icon="plus" handleClick={addGroup.handleOpen}>
+          <Button type="tertary" size="main" icon="plus" handleClick={addGroup.handleOpen}>
             Add group
           </Button>
-          <Button type="ghost" size="small" handleClick={addWord.handleOpen}>
+          <Button type="ghost" size="main" handleClick={addWord.handleOpen}>
             Add word
           </Button>
         </section>
@@ -71,16 +76,16 @@ const GroupPage = () => {
           setGroupName={addGroup.setName}
           handleAddGroup={addGroup.handleAddGroup}
         />
+        <AddWordBottomsheet
+          isOpen={addWord.isOpen}
+          handleClose={addWord.handleClose}
+          word={addWord.word}
+          description={addWord.description}
+          setWord={addWord.setWord}
+          setDescription={addWord.setDescription}
+          handleAddWord={addWord.handleAddWord}
+        />
       </div>
-      <AddWordBottomsheet
-        isOpen={addWord.isOpen}
-        handleClose={addWord.handleClose}
-        word={addWord.word}
-        translation={addWord.translation}
-        setWord={addWord.setWord}
-        setTranslation={addWord.setTranslation}
-        handleAddWord={addWord.handleAddWord}
-      />
     </div>
   );
 };

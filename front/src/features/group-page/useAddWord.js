@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const useAddWord = () => {
   const [word, setWord] = useState('');
-  const [translation, setTranslation] = useState('');
+  const [description, setDescription] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
@@ -19,9 +19,9 @@ const useAddWord = () => {
 
   return {
     word,
+    description,
     setWord,
-    translation,
-    setTranslation,
+    setDescription,
     isOpen,
     handleOpen,
     handleClose,

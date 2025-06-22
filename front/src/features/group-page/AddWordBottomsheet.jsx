@@ -6,9 +6,9 @@ const AddWordBottomsheet = ({
   isOpen,
   handleClose,
   word,
-  translation,
+  description,
   setWord,
-  setTranslation,
+  setDescription,
   handleAddWord,
 }) => {
   return (
@@ -23,8 +23,8 @@ const AddWordBottomsheet = ({
             placeholder="Type word"
           />
           <Input
-            text={translation}
-            setText={setTranslation}
+            text={description}
+            setText={setDescription}
             type="onLight"
             label="Translation"
             placeholder="Type translation"

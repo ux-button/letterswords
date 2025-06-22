@@ -17,10 +17,10 @@ const NavigationTitle = ({
     <div className="flex items-center justify-between px-2 py-1">
       <section className="flex h-full w-14 shrink items-center">
         <div onClick={handlePrefix}>
-          <BasicIcon type={prefixIcon} size={24} />
+          <BasicIcon type={prefixIcon} style="stroke-mono-50" size={24} />
         </div>
         <div onClick={handlePrefixExtra}>
-          <Icon type={prefixExtra} size={24} />
+          <Icon type={prefixExtra} size={24} style="fill-mono-100" />
         </div>
       </section>
       <section className="flex h-14 grow flex-col justify-center px-2">
@@ -29,7 +29,7 @@ const NavigationTitle = ({
       </section>
       <section className="flex h-full w-14 shrink items-center">
         <div onClick={handleSuffixExtra}>
-          <Icon type={suffixExtra} size={24} />
+          <Icon type={suffixExtra} size={24} style="fill-mono-100" />
         </div>
 
         <div onClick={handleSuffix}>
