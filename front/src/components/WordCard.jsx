@@ -1,6 +1,6 @@
 import { Icon } from './Icon';
 
-const WordCard = ({ type, word, description }) => {
+const WordCard = ({ type, isIcons, word, description }) => {
   const cardType = {
     default: 'bg-mono-0',
     riseLow: 'bg-avocado-50',
@@ -25,11 +25,13 @@ const WordCard = ({ type, word, description }) => {
         <div className="text-default text-mono-50">{description}</div>
         <div className="text-subsection text-mono-100">{word}</div>
       </section>
-      <section className="flex w-fit gap-4">
-        <Icon type={iconsType[type][0]} style={iconsType[type][1]} size={24} />
-        <Icon type="trash" style={iconsType[type][2]} size={24} />
-        <Icon type="dots" style={iconsType[type][2]} size={24} />
-      </section>
+      {!isIcons && (
+        <section className="flex w-fit gap-4">
+          <Icon type={iconsType[type][0]} style={iconsType[type][1]} size={24} />
+          <Icon type="trash" style={iconsType[type][2]} size={24} />
+          <Icon type="dots" style={iconsType[type][2]} size={24} />
+        </section>
+      )}
     </div>
   );
 };

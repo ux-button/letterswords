@@ -31,7 +31,7 @@ const Input = ({ type, label, text, setText, placeholder }) => {
 
   // Controllers
   const handleChange = (value) => {
-    setText(() => value);
+    setText(value);
   };
 
   const handleClear = () => {

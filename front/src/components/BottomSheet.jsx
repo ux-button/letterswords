@@ -39,6 +39,7 @@ const BottomSheet = ({
       </>
     );
   }
+  return null;
 };
 
 export { BottomSheet };

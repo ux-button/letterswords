@@ -9,8 +9,6 @@ import { WordsPage } from './features/words-page/wordsPage.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <body className="bg-mono-8">
-      <WordsPage />
-    </body>
+    <WordsPage />
   </StrictMode>,
 );

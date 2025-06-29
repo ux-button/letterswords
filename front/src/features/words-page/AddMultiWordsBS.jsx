@@ -2,17 +2,18 @@ import { BottomSheet } from '../../components/BottomSheet';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 
-const AddWordBottomsheet = ({
+const AddMultiWordsBS = ({
   isOpen,
   handleClose,
   word,
   description,
   setWord,
   setDescription,
-  handleAddWord,
+  handleSave,
+  handleAddMore,
 }) => {
   return (
-    <BottomSheet isOpen={isOpen} suffixIcon="cross" handleSuffix={handleClose} title="Add new word">
+    <BottomSheet isOpen={isOpen} suffixIcon="cross" handleSuffix={handleClose} title="Add words">
       <div className="space-y-4">
         <div className="space-y-1">
           <Input
@@ -30,12 +31,17 @@ const AddWordBottomsheet = ({
             placeholder="Type translation"
           />
         </div>
-        <Button type="primary" size="large" handleClick={handleAddWord}>
-          Add
-        </Button>
+        <div className="flex">
+          <Button type="primary" size="large" handleClick={handleSave}>
+            Save
+          </Button>
+          <Button type="primary" size="large" handleClick={handleAddMore}>
+            Save
+          </Button>
+        </div>
       </div>
     </BottomSheet>
   );
 };
 
-export { AddWordBottomsheet };
+export { AddMultiWordsBS };
