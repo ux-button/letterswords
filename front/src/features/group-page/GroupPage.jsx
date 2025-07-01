@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 
 // Components
 import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
 import { WordsGroupCard } from '../../components/WordsGroupCard';
-import { AddGroupBottomsheet } from './AddGroupBottomsheet';
-import { AddWordBottomsheet } from './AddWordBottomsheet';
+import { BottomSheet } from '../../components/BottomSheet';
+import { NavigationTitle } from '../../components/NavigationTitle';
 
 // Controllers
 import { groupSort } from './groupSort';
@@ -21,13 +22,13 @@ const GroupPage = () => {
     { type: 'riseExtreme', title: 'Mastering of presentation', quantity: '2', learningCurve: '1' },
     { type: 'default', title: 'Holidays', quantity: '17', learningCurve: '0' },
     { type: 'inbox', title: 'Cafe', quantity: '11', learningCurve: '10' },
-    { type: 'default', title: 'Cafe', quantity: '11', learningCurve: '10' },
-    { type: 'riseLow', title: 'Cafe', quantity: '11', learningCurve: '10' },
-    { type: 'default', title: 'Cafe', quantity: '11', learningCurve: '10' },
-    { type: 'repeat', title: 'Cafe', quantity: '11', learningCurve: '10' },
-    { type: 'riseHigh', title: 'Cafe', quantity: '11', learningCurve: '10' },
-    { type: 'default', title: 'Cafe', quantity: '11', learningCurve: '10' },
-    { type: 'recommended', title: 'Cafe', quantity: '11', learningCurve: '10' },
+    { type: 'default', title: 'Cafe', quantity: '11', learningCurve: '8' },
+    { type: 'riseLow', title: 'Cafe', quantity: '11', learningCurve: '3' },
+    { type: 'default', title: 'Cafe', quantity: '11', learningCurve: '5' },
+    { type: 'repeat', title: 'Cafe', quantity: '11', learningCurve: '8' },
+    { type: 'riseHigh', title: 'Cafe', quantity: '11', learningCurve: '1' },
+    { type: 'default', title: 'Cafe', quantity: '11', learningCurve: '9' },
+    { type: 'recommended', title: 'Cafe', quantity: '11', learningCurve: '4' },
   ]);
 
   // Add group controller
@@ -69,22 +70,65 @@ const GroupPage = () => {
             );
           })}
         </section>
-        <AddGroupBottomsheet
-          isOpen={addGroup.isOpen}
-          handleClose={addGroup.handleClose}
-          groupName={addGroup.name}
-          setGroupName={addGroup.setName}
-          handleAddGroup={addGroup.handleAddGroup}
-        />
-        <AddWordBottomsheet
-          isOpen={addWord.isOpen}
-          handleClose={addWord.handleClose}
-          word={addWord.word}
-          description={addWord.description}
-          setWord={addWord.setWord}
-          setDescription={addWord.setDescription}
-          handleAddWord={addWord.handleAddWord}
-        />
+        {addGroup.isOpen ? (
+          <BottomSheet
+            header={
+              <NavigationTitle
+                title="Add group"
+                suffixIcon="cross"
+                handleSuffix={addGroup.handleClose}
+              />
+            }
+            content={
+              <div className="space-y-4">
+                <Input
+                  text={addGroup.name}
+                  setText={addGroup.setName}
+                  type="onLight"
+                  label="Group name"
+                  placeholder="Type name"
+                />
+                <Button type="primary" size="large" handleClick={addGroup.handleAddGroup}>
+                  Add
+                </Button>
+              </div>
+            }
+          />
+        ) : null}
+        {addWord.isOpen ? (
+          <BottomSheet
+            header={
+              <NavigationTitle
+                title="Add single word"
+                suffixIcon="cross"
+                handleSuffix={addWord.handleClose}
+              />
+            }
+            content={
+              <div className="space-y-4">
+                <div className="space-y-1">
+                  <Input
+                    text={addWord.word}
+                    setText={addWord.setWord}
+                    type="onLight"
+                    label="Word"
+                    placeholder="Type word"
+                  />
+                  <Input
+                    text={addWord.description}
+                    setText={addWord.setDescription}
+                    type="onLight"
+                    label="Translation"
+                    placeholder="Type translation"
+                  />
+                </div>
+                <Button type="primary" size="large" handleClick={addWord.handleAddWord}>
+                  Add
+                </Button>
+              </div>
+            }
+          />
+        ) : null}
       </div>
     </div>
   );

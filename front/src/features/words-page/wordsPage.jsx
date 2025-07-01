@@ -3,8 +3,11 @@ import { Button } from '../../components/Button';
 import { NavigationTitle } from '../../components/NavigationTitle';
 import { WordCard } from '../../components/WordCard';
 import { Checkbox } from '../../components/Checkbox';
-import { AddMultiWordsBS } from './AddMultiWordsBS';
 import { useAddMulti } from './useAddMulti';
+
+import { Modal } from '../../components/Modal';
+import { BottomSheet } from '../../components/BottomSheet';
+import { Input } from '../../components/Input';
 
 const WordsPage = () => {
   const allWords = [
@@ -41,7 +44,7 @@ const WordsPage = () => {
   };
 
   return (
-    <div className="h-screen w-screen space-y-4">
+    <div className="bg-mono-8 h-screen w-screen space-y-4 overflow-y-auto">
       <section className="bg-mono-8 sticky top-0">
         <NavigationTitle
           title="Travel"
@@ -92,18 +95,85 @@ const WordsPage = () => {
           Learn words
         </Button>
       </section>
-      <AddMultiWordsBS
-        isOpen={addMultiWords.isOpen}
-        handleClose={addMultiWords.handleClose}
-        word={addMultiWords.word}
-        description={addMultiWords.description}
-        setWord={addMultiWords.setWord}
-        setDescription={addMultiWords.setDescription}
-        handleSave={addMultiWords.handleSave}
-        handleAddMore={addMultiWords.handleAddMore}
+      {addMultiWords.isOpen ? (
+        <BottomSheet
+          header={
+            <NavigationTitle
+              title="Add new word"
+              suffixIcon="cross"
+              handleSuffix={addMultiWords.handleClose}
+            />
+          }
+          content={
+            <div className="space-y-4">
+              <div className="space-y-1">
+                <Input
+                  text={addMultiWords.word}
+                  setText={addMultiWords.setWord}
+                  type="onLight"
+                  label="Word"
+                  placeholder="Type word"
+                />
+                <Input
+                  text={addMultiWords.description}
+                  setText={addMultiWords.setDescription}
+                  type="onLight"
+                  label="Translation"
+                  placeholder="Type translation"
+                />
+              </div>
+              <div className="flex space-x-4">
+                <Button
+                  type="ghost"
+                  size="large"
+                  handleClick={addMultiWords.handleSave}
+                  width="full"
+                >
+                  Save
+                </Button>
+                <Button
+                  type="primary"
+                  size="large"
+                  icon="plus"
+                  handleClick={addMultiWords.handleAddMore}
+                  width="full"
+                >
+                  One more
+                </Button>
+              </div>
+            </div>
+          }
+        />
+      ) : null}
+      <Modal
+        header={<NavigationTitle title="Some word" suffixIcon="cross" />}
+        content={
+          <div className="space-y-2">
+            <Button type="tertary" size="large">
+              Rise word
+            </Button>
+            <Button type="tertary" size="large">
+              Edit word
+            </Button>
+            <Button type="tertary" size="large" icon="folder">
+              Move to folder
+            </Button>
+            <Button type="attention" size="large" icon="trash">
+              Delete word
+            </Button>
+          </div>
+        }
+        footer={
+          <Button type="ghost" size="large">
+            Cancel
+          </Button>
+        }
       />
     </div>
   );
 };
+
+// TO DO: Add controller function
+// TO DO: Add actions handler for each icon in word component
 
 export { WordsPage };

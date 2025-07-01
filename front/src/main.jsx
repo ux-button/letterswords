@@ -9,6 +9,6 @@ import { WordsPage } from './features/words-page/wordsPage.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <WordsPage />
+    <GroupPage />
   </StrictMode>,
 );
