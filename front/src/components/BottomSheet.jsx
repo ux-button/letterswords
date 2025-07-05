@@ -1,5 +1,3 @@
-import { NavigationTitle } from './NavigationTitle';
-
 const BottomSheet = ({ header, content, footer }) => {
   return (
     <>

@@ -4,8 +4,8 @@ const ProgressBar = ({ isDefault, learningCurve }) => {
       <svg
         className={
           isDefault
-            ? 'fill-mono-25 absolute left-0 top-0 z-10 h-2'
-            : 'fill-mono-100 absolute left-0 top-0 z-10 h-2'
+            ? 'fill-mono-25 absolute top-0 left-0 z-10 h-2'
+            : 'fill-mono-100 absolute top-0 left-0 z-10 h-2'
         }
         width={`${learningCurve}0%`}
         preserveAspectRatio="xMaxYMin slice"
@@ -15,7 +15,7 @@ const ProgressBar = ({ isDefault, learningCurve }) => {
         <rect width="241" height="16" />
       </svg>
       <svg
-        className="fill-mono-50 opacity-8 absolute left-0 top-0 z-0 h-2 w-full"
+        className="fill-mono-50 absolute top-0 left-0 z-0 h-2 w-full opacity-8"
         preserveAspectRatio="xMinYMin slice"
         viewBox="8 0 1148 8"
         xmlns="http://www.w3.org/2000/svg"

@@ -80,14 +80,16 @@ const GroupPage = () => {
               />
             }
             content={
-              <div className="space-y-4">
-                <Input
-                  text={addGroup.name}
-                  setText={addGroup.setName}
-                  type="onLight"
-                  label="Group name"
-                  placeholder="Type name"
-                />
+              <Input
+                text={addGroup.name}
+                setText={addGroup.setName}
+                type="onLight"
+                label="Group name"
+                placeholder="Type name"
+              />
+            }
+            footer={
+              <div className="pt-4">
                 <Button type="primary" size="large" handleClick={addGroup.handleAddGroup}>
                   Add
                 </Button>
@@ -105,23 +107,25 @@ const GroupPage = () => {
               />
             }
             content={
-              <div className="space-y-4">
-                <div className="space-y-1">
-                  <Input
-                    text={addWord.word}
-                    setText={addWord.setWord}
-                    type="onLight"
-                    label="Word"
-                    placeholder="Type word"
-                  />
-                  <Input
-                    text={addWord.description}
-                    setText={addWord.setDescription}
-                    type="onLight"
-                    label="Translation"
-                    placeholder="Type translation"
-                  />
-                </div>
+              <div className="space-y-1">
+                <Input
+                  text={addWord.word}
+                  setText={addWord.setWord}
+                  type="onLight"
+                  label="Word"
+                  placeholder="Type word"
+                />
+                <Input
+                  text={addWord.description}
+                  setText={addWord.setDescription}
+                  type="onLight"
+                  label="Translation"
+                  placeholder="Type translation"
+                />
+              </div>
+            }
+            footer={
+              <div className="pt-4">
                 <Button type="primary" size="large" handleClick={addWord.handleAddWord}>
                   Add
                 </Button>
