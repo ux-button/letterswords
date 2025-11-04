@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 
 // Components
-import { Button } from '../../components/Button';
-import { Input } from '../../components/Input';
-import { WordsGroupCard } from '../../components/WordsGroupCard';
-import { BottomSheet } from '../../components/BottomSheet';
-import { NavigationTitle } from '../../components/NavigationTitle';
+import { Button } from '../../../shared/ui/Button';
+import { Input } from '../../../shared/ui/Input';
+import { WordsGroupCard } from '../../../shared/ui/WordsGroupCard';
+import { BottomSheet } from '../../../shared/ui/BottomSheet';
+import { NavigationTitle } from '../../../shared/ui/NavigationTitle';
 
 // Controllers
-import { groupSort } from './groupSort';
+import { groupSort } from '../model/groupSort';
 
 // Hooks
-import { useAddGroup } from './useAddGroup';
-import { useAddWord } from './useAddWord';
+import { useAddGroup } from '../model/useAddGroup';
+import { useAddWord } from '../model/useAddWord';
 
 const GroupPage = () => {
   const [groups, setGroups] = useState([

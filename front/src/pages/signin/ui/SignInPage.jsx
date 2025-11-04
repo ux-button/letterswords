@@ -1,17 +1,18 @@
-import { Input } from '../../components/Input';
-import { Button } from '../../components/Button';
 import { useState } from 'react';
-import { LoginBackground } from './LoginBackground';
-import { StarwordyLogo } from '../../assets/StarwordyLogo';
 
-const LogInPage = () => {
+import { Input } from '../../../shared/ui/Input';
+import { Button } from '../../../shared/ui/Button';
+import { SignInBackground } from './SignInBackground';
+import { StarwordyLogo } from '../../../shared/ui/StarwordyLogo';
+
+const SignInPage = () => {
   // Control over inputs
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
   return (
     <div className="bg-mono-100 relative flex min-h-screen flex-col overflow-hidden px-8 pt-16 pb-28">
-      <LoginBackground />
+      <SignInBackground />
       <section className="flex shrink-0 justify-center">
         <StarwordyLogo />
       </section>
@@ -44,4 +45,4 @@ const LogInPage = () => {
   );
 };
 
-export { LogInPage };
+export { SignInPage };

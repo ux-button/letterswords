@@ -1,4 +1,4 @@
-const LoginBackground = () => {
+const SignInBackground = () => {
   return (
     <svg
       className="pointer-events-none absolute inset-1/2 z-10 h-[932px] w-[760px] max-w-none -translate-x-1/2 -translate-y-1/2"
@@ -74,4 +74,4 @@ const LoginBackground = () => {
   );
 };
 
-export { LoginBackground };
+export { SignInBackground };

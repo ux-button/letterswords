@@ -1,17 +1,19 @@
 import { useState } from 'react';
-import { Button } from '../../components/Button';
-import { NavigationTitle } from '../../components/NavigationTitle';
-import { WordCard } from '../../components/WordCard';
-import { Checkbox } from '../../components/Checkbox';
-import { useAddMulti } from './useAddMulti';
 
-import { Modal } from '../../components/Modal';
-import { BottomSheet } from '../../components/BottomSheet';
-import { Input } from '../../components/Input';
+import { Button } from '../../../shared/ui/Button';
+import { NavigationTitle } from '../../../shared/ui/NavigationTitle';
+import { WordCard } from '../../../shared/ui/WordCard';
+import { Checkbox } from '../../../shared/ui/Checkbox';
+
+import { useAddMulti } from '../model/useAddMulti';
+
+import { Modal } from '../../../shared/ui/Modal';
+import { BottomSheet } from '../../../shared/ui/BottomSheet';
+import { Input } from '../../../shared/ui/Input';
 
 import { WordsPageContainer } from './WordsPageContainer';
-import { WordsGroupCard } from '../../components/WordsGroupCard';
-import { BottomSheetFull } from '../../components/BottomSheetFull';
+import { WordsGroupCard } from '../../../shared/ui/WordsGroupCard';
+import { BottomSheetFull } from '../../../shared/ui/BottomSheetFull';
 
 const WordsPage = () => {
   const allWords = [
