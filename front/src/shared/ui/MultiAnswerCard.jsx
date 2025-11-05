@@ -1,7 +1,7 @@
 import { Button } from './Button';
 import { Icon } from './Icon';
 
-const Flipcard = () => {
+const MultiAnswerCard = () => {
   return (
     <div className="bg-mono-0 fixed top-30 right-4 bottom-8 left-4 flex flex-col items-center justify-between rounded-4xl">
       <section className="flex w-full items-center justify-between p-4">
@@ -19,18 +19,24 @@ const Flipcard = () => {
           </Button>
         </div>
       </sectiion>
-      <section className="space-y-4 px-4 pb-5">
-        <div className="flex justify-center">
-          <Button type="secondary" size="main" icon="skip" buttonWidth="fit">
+      <section className="w-full space-y-4 px-4 pb-5">
+        <div className="w-fit">
+          <Button type="secondary" size="main" icon="skip">
             Skip
           </Button>
         </div>
-        <div className="flex space-x-2">
-          <Button type="ghost" size="large" icon="diamond">
-            Forget
+        <div>
+          <Button type="ghost" size="large">
+            Приключение
           </Button>
-          <Button type="secondary" size="large" icon="tick">
-            I khow
+          <Button type="ghost" size="large">
+            Приключение
+          </Button>
+          <Button type="ghost" size="large">
+            Приключение
+          </Button>
+          <Button type="ghost" size="large">
+            Приключение
           </Button>
         </div>
       </section>
@@ -38,4 +44,4 @@ const Flipcard = () => {
   );
 };
 
-export { Flipcard };
+export { MultiAnswerCard };

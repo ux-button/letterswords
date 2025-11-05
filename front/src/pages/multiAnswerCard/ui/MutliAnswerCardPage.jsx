@@ -3,10 +3,10 @@ import { ProgressBar } from '../../../shared/ui/ProgressBar';
 import { NavigationTitle } from '../../../shared/ui/NavigationTitle';
 
 // Group elements
-import { FlipcardContainer } from './flipcardContainer';
-import { Flipcard } from '../../../shared/ui/FlipCard';
+import { MutliAnswerCardContainer } from './MutliAnswerCardContainer';
+import { MultiAnswerCard } from '../../../shared/ui/MultiAnswerCard';
 
-const FlipcardPage = () => {
+const MutliAnswerCardPage = () => {
   const allWords = [
     { id: '001', type: 'default', word: 'Car', description: 'Машина' },
     { id: '002', type: 'riseLow', word: 'Road', description: 'Дорога' },
@@ -22,8 +22,10 @@ const FlipcardPage = () => {
   ];
 
   return (
-    <FlipcardContainer
-      navigationBar={<NavigationTitle title="Word cards" suffixIcon="cross" />}
+    <MutliAnswerCardContainer
+      navigationBar={
+        <NavigationTitle title="Word cards" subtitle="Choose the correct card" suffixIcon="cross" />
+      }
       progressBar={
         <div className="flex items-center gap-2 px-4 py-2">
           <div className="flex gap-1">
@@ -35,11 +37,11 @@ const FlipcardPage = () => {
       }
       content={
         <div className="px-4">
-          <Flipcard />
+          <MultiAnswerCard />
         </div>
       }
     />
   );
 };
 
-export { FlipcardPage };
+export { MutliAnswerCardPage };

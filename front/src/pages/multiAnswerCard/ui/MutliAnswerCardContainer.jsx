@@ -1,4 +1,4 @@
-const FlipcardContainer = ({ navigationBar, progressBar, content }) => {
+const MutliAnswerCardContainer = ({ navigationBar, progressBar, content }) => {
   return (
     <div className="bg-mono-8 h-screen w-screen">
       <div>{navigationBar}</div>
@@ -8,4 +8,4 @@ const FlipcardContainer = ({ navigationBar, progressBar, content }) => {
   );
 };
 
-export { FlipcardContainer };
+export { MutliAnswerCardContainer };

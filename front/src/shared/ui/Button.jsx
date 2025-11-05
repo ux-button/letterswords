@@ -23,6 +23,7 @@ const Button = ({ children, type, size, icon, width, handleClick }) => {
   // Button width
   const buttonWidth = {
     full: 'w-full',
+    fit: 'w-fit',
   };
 
   return (
